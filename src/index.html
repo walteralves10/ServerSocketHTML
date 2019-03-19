@@ -1,9 +1,89 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>SISTEMA DISTRIBUIDO</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Sistema Distribuido</title>
+<style>
+body{
+	margin:0;
+	background-color:#369;
+	overflow:auto;
+}
+
+#content{
+	background:#369;
+	height:480px;
+	width:750px;
+	position:relative;
+	top:500px;
+	z-index:0;
+}
+
+#backbutton{
+	position:relative;
+	left:760px;
+	cursor:pointer;
+}
+
+#caption{
+	position:relative;
+	top:-60px;
+	
+	color:#FFF;
+	font-size:25px;
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+#pagecaption{
+	position:relative;
+	top:-60px;
+	
+	color:#FFF;
+	font-size:25px;
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+</style>
 </head>
-<body>
-	<H1>SEJA BEM VINDO</H1>
+
+<body link="#FFFFFF">
+<!--header-->
+<div style="width:100%; height:80px; overflow:hidden; margin: 0 auto; background-color:#333">
+
+  <div style="width:750px; height:80px; margin: 0 auto; overflow:hidden; position:relative">
+		
+        <div id="caption" style="height:44px; margin-top:20px;float:left; margin-left:12px; position:absolute"> Company Title </div>
+        
+        <div id="backbutton" style="height:44px; width:44px; margin-top:15px; float:left; position:absolute"> <img src="imgs/backbtn.png" width="44" height="44" /> </div>
+        
+       <div id="pagecaption" style="height:44px; margin-top:20px;float:left; margin-left:12px; position:absolute"> Caption </div>
+  </div>
+
+</div>
+
+<!--buttons-->
+<div style="width:750px; height:450px; overflow:hidden; margin: 0 auto; position:relative; margin-top:35px;">
+
+    <!--<div id="content" style="position:absolute"> <iframe name="main" frameborder=0 height=450 width=750></iframe>  </div>-->
+    
+</div>
+
+<!--footer-->
+<div style="width:100%; height:220px; overflow:hidden; margin: 0 auto; background-color:#333; margin-top:20px;">
+    <div style="width:750px; height:80px; margin: 0 auto;">
+    <p style="text-align:center; color:#FFF; font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif; font-size:x-small">Free Template by <a href="http://www.techgyo.com">TechGyo</a> tech blog &copy; 2013 All rights reserved. </p>
+    <p style="text-align:center; color:#CCC; font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif; font-size:x-small"> Brand names used in this template belongs to respective owners. </p>
+    </div>
+</div>
+
+<script type="text/javascript">
+  
+   $("#backbutton").click(function(){
+	    TweenLite.to($("#content"),1,{css:{top:500}, ease:Power2.easeIn});
+		TweenLite.to($("#backbutton"),1,{css:{left:760, rotation:0}, ease:Power2.easeIn});
+		TweenLite.to($("#pagecaption"),1,{css:{top:-60}, ease:Power2.easeOut});
+		TweenLite.to($("#caption"),1,{css:{top:0}, ease:Power2.easeOut});
+	});   
+</script>	
+
 </body>
 </html>
