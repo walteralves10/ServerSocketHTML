@@ -15,6 +15,7 @@ public class ServidorHtml {
     public static void main(String[] args) throws IOException {
         
         ServerSocket servidor = new ServerSocket(8530);
+        System.out.println("Aguardando conexao ...");
         Socket socket = servidor.accept();
         
         if (socket.isConnected()) {
