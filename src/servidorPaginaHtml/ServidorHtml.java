@@ -1,3 +1,5 @@
+package servidorPaginaHtml;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -29,14 +31,14 @@ public class ServidorHtml {
             String protocolo = dadosReq[2];
             
             if (localArquivo.equals("/"))
-                localArquivo = "src\\index.html";
+                localArquivo = "index.html";
             
             File BuscaHtml = new File(localArquivo);
             String status = protocolo + " 200 OK\r\n";
             
             if (!BuscaHtml.exists()) {
                 status = protocolo + " 404 Not Found\r\n";
-                System.out.println("NÃO ACHOU O LOCAL DO ARQUIVO");
+                System.out.println("NAO ACHOU O LOCAL DO ARQUIVO");
             }
 
             byte[] conteudo = Files.readAllBytes(BuscaHtml.toPath());
