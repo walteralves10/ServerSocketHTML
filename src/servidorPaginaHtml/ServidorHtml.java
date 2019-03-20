@@ -1,4 +1,4 @@
-package servidorPaginaHtml;
+//package servidorPaginaHtml;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -11,6 +11,13 @@ import java.nio.file.Files;
 import java.util.Date;
 
 public class ServidorHtml {
+
+    public static String[] divideRequisicao;
+    public static String localArquivo; 
+    public static String protocolo; 
+    public static String status;
+    public static File BuscaHtml;
+    public static byte[] conteudo;
 
     public static void main(String[] args) throws IOException {
 
@@ -28,10 +35,6 @@ public class ServidorHtml {
 
             String linha = buffer.readLine();
             System.out.println(linha + "\n");
-            String[] divideRequisicao;
-            String localArquivo = null, protocolo = null, status = null;
-            File BuscaHtml = null;
-            byte[] conteudo = null;
 
             if (linha != null) {
                 divideRequisicao = linha.split(" ");
@@ -39,7 +42,7 @@ public class ServidorHtml {
                 protocolo = divideRequisicao[2];
 
                 if (localArquivo.equals("/")) {
-                    localArquivo = "src\\servidorPaginaHtml\\index.html";
+                    localArquivo = "index.html";
                     BuscaHtml = new File(localArquivo);
                     status = protocolo + " 200 OK\r\n";
 
